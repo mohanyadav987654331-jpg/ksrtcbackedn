@@ -108,12 +108,13 @@ app.use((err, req, res, next) => {
 
 // Start server
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, '127.0.0.1', () => {
+const HOST = process.env.HOST || '0.0.0.0';
+server.listen(PORT, HOST, () => {
   console.log('================================================');
   console.log(`🚀 KSRTC Backend Server running on port ${PORT}`);
   console.log(`📡 WebSocket server ready`);
-  console.log(`🔗 API URL: http://localhost:${PORT}/api`);
-  console.log(`🏥 Health check: http://localhost:${PORT}/api/health`);
+  console.log(`🔗 API URL: http://${HOST}:${PORT}/api`);
+  console.log(`🏥 Health check: http://${HOST}:${PORT}/api/health`);
   console.log('================================================');
 }).on('error', (err) => {
   console.error('Server error:', err);
