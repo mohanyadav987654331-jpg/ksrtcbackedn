@@ -1,0 +1,4 @@
+Testing API endpoint...
+URL: http://localhost:3000/api/schedules/my-today?date=2026-01-29
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAyLCJ1c2VybmFtZSI6ImRyaXZlcjIiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzY5NzA3NDM0LCJleHAiOjE3NzAzMTIyMzR9.SFlJ3Sds6WWNRQuue03EgP0asSXPSDx2cItpu2FvZWc
+Error: 
