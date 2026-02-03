@@ -41,6 +41,7 @@ app.use('/api/tracking', require('./routes/tracking'));
 app.use('/api/route-stops', require('./routes/route-stops'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/drivers', require('./routes/drivers'));
+app.use('/api/bus-tracking', require('./routes/bus-tracking'));
 
 app.use('/api/depot', require('./routes/depot-management'));
 

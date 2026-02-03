@@ -79,19 +79,26 @@ router.get('/', auth, async (req, res) => {
     }
     
     // Regular bus query
-    let query = 'SELECT * FROM buses WHERE 1=1';
+    let query = `
+      SELECT b.*,
+             COALESCE(u.full_name, u.username) as driver_name,
+             u.phone as driver_phone
+      FROM buses b
+      LEFT JOIN users u ON b.driver_id = u.id
+      WHERE 1=1
+    `;
     const params = [];
 
     if (status) {
-      query += ' AND status = ?';
+      query += ' AND b.status = ?';
       params.push(status);
     }
     if (routeId) {
-      query += ' AND route_id = ?';
+      query += ' AND b.route_id = ?';
       params.push(routeId);
     }
     if (depotId) {
-      query += ' AND depot_id = ?';
+      query += ' AND b.depot_id = ?';
       params.push(depotId);
     }
 
